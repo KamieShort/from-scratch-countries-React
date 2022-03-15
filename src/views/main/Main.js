@@ -33,14 +33,21 @@ export default function Main() {
     fetchData();
   }, []);
 
-  const filterCountries = () => {
-    return countries.filter((country) => country.continent === continent || continent === 'All');
-  };
+  //   const filterCountries = () => {
+  //     return countries.filter((country) => country.continent === continent || continent === 'All');
+  //   };
 
   return (
     <>
       <p className="error">{errorMessage}</p>
-      <Filter options={options} callback={setContinent} />
+      <select onChange={(e) => setContinent(e.target.value)}>
+        {options.map((opt) => (
+          <option key={opt} value={opt}>
+            {opt}
+          </option>
+        ))}
+      </select>
+      {/* <Filter options={options} callback={setContinent} /> */}
       <div className="main">
         {countries.map((country) => (
           <CountryCard key={country.name} {...country} />
