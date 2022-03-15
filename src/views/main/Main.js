@@ -8,6 +8,7 @@ export default function Main() {
   const [countries, setCountries] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
   const [continent, setContinent] = useState('All');
+  const [loading, setLoading] = useState(true);
 
   const options = [
     'All',
@@ -25,7 +26,7 @@ export default function Main() {
       try {
         const resp = await fetchCountries();
         setCountries(resp);
-        // console.log(resp);
+        setLoading(false);
       } catch (e) {
         setErrorMessage('Woops...something is wrong, please refresh the page.');
       }
@@ -36,6 +37,8 @@ export default function Main() {
   const filterCountries = () => {
     return countries.filter((country) => country.continent === continent || continent === 'All');
   };
+
+  if (loading) return <div className="Loading"></div>;
 
   return (
     <>
