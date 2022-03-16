@@ -6,8 +6,10 @@ img {
 
 .card {
   display: flex;
+  flex-direction: column;
   width: 200px;
   height: 200px;
-  flex-direction: column;
+
   text-align: center;
+  font-family: 'Petit Formal Script', cursive;
 }

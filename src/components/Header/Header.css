@@ -1,4 +1,8 @@
 Header {
   font-size: 50px;
-  color: blue;
+  color: black;
+  font-family: 'Petit Formal Script', cursive;
+  font-weight: 100;
+  background-color: cadetblue;
+  margin-bottom: 100px;
 }
