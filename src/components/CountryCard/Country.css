@@ -1,0 +1,13 @@
+img {
+  width: 72px;
+
+  height: 54px;
+}
+
+.card {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  flex-direction: column;
+  text-align: center;
+}

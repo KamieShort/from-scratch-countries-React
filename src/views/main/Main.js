@@ -25,10 +25,15 @@ export default function Main() {
     const fetchData = async () => {
       try {
         const resp = await fetchCountries();
+        // console.log(resp);
         setCountries(resp);
-        setLoading(false);
+
+        setTimeout(() => {
+          setLoading(false);
+        }, 750);
       } catch (e) {
-        setErrorMessage('Woops...something is wrong, please refresh the page.');
+        setErrorMessage('Woops...something went wrong. Please refresh the page.');
+        setLoading(false);
       }
     };
     fetchData();
@@ -38,7 +43,7 @@ export default function Main() {
     return countries.filter((country) => country.continent === continent || continent === 'All');
   };
 
-  if (loading) return <div className="Loading"></div>;
+  if (loading) return <div className="loader">Loading...</div>;
 
   return (
     <>
