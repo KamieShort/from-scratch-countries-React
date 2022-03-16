@@ -25,7 +25,7 @@ export default function Main() {
     const fetchData = async () => {
       try {
         const resp = await fetchCountries();
-        // console.log(resp);
+
         setCountries(resp);
 
         setTimeout(() => {
